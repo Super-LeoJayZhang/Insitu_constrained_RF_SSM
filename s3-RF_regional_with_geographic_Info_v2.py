@@ -7,6 +7,7 @@ Contact: leojayak@gmail.com
 Description: Run the RF model with the predictors from GEE.
     API, NDVI, EVI, LST
     SILT, SAND CLAY
+    LON, LAT
 """
 # libraries
 import os

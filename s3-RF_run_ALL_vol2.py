@@ -26,11 +26,10 @@ split_scale = 0.7  # split of the data
 model_trees = 100  # The number of trees that used in the RF model.
 
 # steps switch
-step_valid_0 = 1  # Train the RF model, if the model has been trained, please set as 0
+step_training = 1  # Train the RF model, 1: training the model and save the trained *.m 0: read the model directly.
 
-step_valid_0_0 = 1  # Read the data, split and save the time-series of predictor variables into separated CSV file.
+step_spliting = 0  # 1: Read the data, split and save the time-series of predictor variables into separated CSV file.
 
-step_valid_1 = 1  # Train the RF Model
 
 # time (start running)
 time_0 = datetime.now()
@@ -71,9 +70,9 @@ files = os.listdir(folder_input)
 
 
 """ Read the data """
-if step_valid_0 == 1:
+if step_training == 1:
     # Read the data, split and save.  Append all the predictor variables and labels.
-    if step_valid_0_0 == 1:
+    if step_spliting == 1:
         # Initialize the data frame.
         df_all = pd.DataFrame()
 
@@ -161,6 +160,13 @@ if step_valid_0 == 1:
     for f in range(features.shape[1]):
         print('%s: %.3f' % (feature_list[indices[f]], importances[indices[f]]))
 
+    # Save the feature importance in a *.csv file.
+    df_importances = pd.DataFrame(columns=['feature_list', 'importances', 'indices'])
+    df_importances['feature_list'] = feature_list
+    df_importances['importances'] = importances
+    df_importances['indices'] = indices
+    df_importances.to_csv(os.path.join(folder_output, 'Feature_importance.csv'))
+
     # Figures.
     plt.figure(figsize=(20, 10))
     #  sort the feature_list
@@ -204,7 +210,7 @@ if step_valid_0 == 1:
     plt.savefig(os.path.join(folder_output, 'ComparisonOfTestDataset.png'))
     plt.close()
 
-if step_valid_1 == 1:
+
     """ Evaluate the RF model"""
     # Read the file of land cover.
     df_lc = pd.read_csv(file_lc, index_col=0)
