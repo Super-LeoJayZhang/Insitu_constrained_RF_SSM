@@ -2,7 +2,7 @@
 Thesis_MSc_Lijie NDVI_SG_interpolate
 date: 19-Jun-2020
 author: leojay
-Contact: l.zhang-8@student.utwente.nl
+Contact: leojayak@gmail.com
 -------------------------------------
 Description: 
 """

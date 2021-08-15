@@ -2,7 +2,7 @@
 Thesis_MSc_Lijie RF_run_ALL_vol1
 date: 19-May-2020. All the networks (stations).
 author: leojay
-Contact: l.zhang-8@student.utwente.nl
+Contact: leojayak@gmail.com
 -------------------------------------
 Description: Run the RF model with the predictors from GEE.
     API, NDVI, EVI, LST

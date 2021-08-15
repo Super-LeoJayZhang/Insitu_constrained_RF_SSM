@@ -2,7 +2,7 @@
 Thesis_MSc_Lijie pts_time_series_extraction_v01
 date: 27-Apr-2020; // updated: 12-Jun-2020
 author: leojay
-Contact: l.zhang-8@student.utwente.nl
+Contact: leojayak@gmail.com
 -------------------------------------
 Description: This script is used to download the time-series of land surface features from GEE at the point scale.
 """

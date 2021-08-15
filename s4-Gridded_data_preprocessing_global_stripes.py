@@ -2,7 +2,7 @@
 Thesis_MSc_Lijie Gridded_data_preprocessing_global_stripes
 date: 05-Aug-2020
 author: leojay
-Contact: l.zhang-8@student.utwente.nl
+Contact: leojayak@gmail.com
 -------------------------------------
 Description: 
 """

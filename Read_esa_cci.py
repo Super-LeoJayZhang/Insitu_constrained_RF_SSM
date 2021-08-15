@@ -46,6 +46,11 @@ geo_trans = (-180.0, 0.25, 0, 90, 0, -0.25)
 # geo_trans = gdal_basemap.GetGeoTransform()
 proj = gdal_basemap.GetProjection()
 
+file_sand  = 'a:\Thesis_Data\L3_RF_gridded\Global_gridded_stripes\L0_downloaded\sand_Global9.tif'
+gdal_sand = gdal.Open(file_sand)
+proj = gdal_sand.GetProjection()
+print(proj)
+
 # time (start running)
 time_0 = datetime.now()
 start_time = time_0.strftime("%Y-%m-%d %H:%M:%S")
@@ -54,8 +59,8 @@ print('Program start running at: %s. ' % start_time)
 # Set the working path
 work_path = r'a:\Thesis_Data\L1_ESA_CCI\ESA-CCI\COMBINED\v04.4'
 os.chdir(work_path)
-folder_daily = r'a:\Thesis_Data\L3_RF_gridded\ESA_CCI_MAP\daily_year'
-folder_yearly_mean = r'a:\Thesis_Data\L3_RF_gridded\ESA_CCI_MAP\yearly_mean'
+folder_daily = r'a:\Thesis_Data\L3_RF_gridded\ESA_CCI_processing'
+# folder_yearly_mean = r'a:\Thesis_Data\L3_RF_gridded\ESA_CCI_processing'
 
 for year in np.arange(2000, 2019):
     # Mark the processing status.
@@ -83,7 +88,7 @@ for year in np.arange(2000, 2019):
     writeTiff(result_year, 1440, 720, n, geo_trans, proj, file_out)
 
 
-# Calculate the mean value from 2000 to 2018
+# Calculate the mean value from 2000 to 2018// This is not correct. !!!!
 result_years = np.arange(720 * 1440).reshape(720, 1440).astype(float)
 result_years[::] = 0
 files_year = os.listdir(folder_daily)

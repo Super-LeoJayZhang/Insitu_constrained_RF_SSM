@@ -73,8 +73,7 @@ ssm.standard_name = 'Surface Soil Moisture'  # This is a CF standard name.
 def Add_data_into_nc(file, ssm):
     ds, columns, lines, bands, geo_trans, proj = read_tif_simple(file)
     x0 = ssm.shape[2]
-    x1 = ds.shape[2]
-    ssm[:, :, x0:x0+x1] = ds
+    ssm[:, :, x0:x0+40] = ds
     return ssm
 
 for count_i in np.arange(0, 36):
@@ -82,3 +81,11 @@ for count_i in np.arange(0, 36):
     print(file, os.path.exists(file))
     ssm = Add_data_into_nc(file, ssm)
 ncfile.close()
+
+
+
+
+
+
+# For juwels to calculate the mean.
+

@@ -2,7 +2,7 @@
 Thesis_MSc_Lijie RF_run_vol1
 date: 10-May-2020  // update 02-07-2020. Add the ESA-CCI data.
 author: leojay
-Contact: l.zhang-8@student.utwente.nl
+Contact: leojayak@gmail.com
 -------------------------------------
 Description: Run the RF model with the predictors from GEE.
     API, NDVI, EVI, LST

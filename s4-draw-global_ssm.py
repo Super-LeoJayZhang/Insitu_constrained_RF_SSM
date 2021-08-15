@@ -2,7 +2,7 @@
 Thesis_MSc_Lijie s4-draw-global_ssm
 date: 26-Jun-2021
 author: leojay
-Contact: l.zhang-8@student.utwente.nl
+Contact: leojayak@gmail.com
 -------------------------------------
 Description: 
 """
@@ -41,12 +41,12 @@ def draw_global_ssm_map(data):
     ax.set_yticklabels(
         ['$\mathregular{70^o}$ N', '$\mathregular{60^o}$ N', '$\mathregular{30^o}$ N', '$\mathregular{0^o}$ N',
          '$\mathregular{30^o}$ S', '$\mathregular{58^o}$ S'])
-    ax.add_feature(cfeature.LAKES)
+    ax.add_feature(cfeature.LAKES, facecolor='w')
     # norm = Normalize(vmin=0, vmax=0.4)
     # Add the Data
     plt.imshow(data, cmap='YlGnBu', origin='upper', vmin=0, vmax=0.4, extent=[-180, 180, -58, 70])
     # Add the ColorBar
-    cb = plt.colorbar(ax=ax, orientation="horizontal", aspect=50, shrink=0.6)
+    cb = plt.colorbar(ax=ax, orientation="horizontal", aspect=50, shrink=0.6,  extend='both')
     cb.set_label('Surface Soil Moisture [$\mathregular{cm^3}$/$\mathregular{cm^3}$]')
 def draw_global_ssm_diff(data):
     # /update: 03-07-2021.
@@ -65,12 +65,12 @@ def draw_global_ssm_diff(data):
     ax.set_yticklabels(
         ['$\mathregular{70^o}$ N', '$\mathregular{60^o}$ N', '$\mathregular{30^o}$ N', '$\mathregular{0^o}$ N',
          '$\mathregular{30^o}$ S', '$\mathregular{58^o}$ S'])
-    ax.add_feature(cfeature.LAKES)
+    ax.add_feature(cfeature.LAKES, facecolor='w')
     # norm = Normalize(vmin=-0.2, vmax=0.2)
     # Add the Data
     plt.imshow(data, cmap='RdBu',   origin='upper', extent=[-180, 180, -58, 70])
     # Add the ColorBar
-    cb = plt.colorbar(ax=ax, orientation="horizontal", aspect=50, shrink=0.6)
+    cb = plt.colorbar(ax=ax, orientation="horizontal", aspect=50, shrink=0.6, extend='both')
     cb.set_label('Surface Soil Moisture difference [$\mathregular{cm^3}$/$\mathregular{cm^3}$]')
 
 
@@ -83,18 +83,18 @@ esa_cci = gdal_esa.ReadAsArray()
 # Draw ESA-CCI figure
 ssm_mean_2015_cci = np.nanmean(esa_cci[:, 80: 720 - 128, :], 0)
 draw_global_ssm_map(ssm_mean_2015_cci)
-plt.savefig('Global_ESA-CCI_SSM_mean_2015.jpg')
+plt.savefig('Global_ESA-CCI_SSM_mean_2015.pdf', dpi=600)
 plt.close()
 
 nc_file = nc.Dataset(file_rf, 'r')
 ssm = nc_file['ssm']
 ssm_mean_2015_rf = np.nanmean(ssm, 0)
 draw_global_ssm_map(ssm_mean_2015_rf)
-plt.savefig('Global_RF_SSM_mean_2015.jpg')
+plt.savefig('Global_RF_SSM_mean_2015.pdf', dpi=600)
 plt.close()
 
 draw_global_ssm_diff( ssm_mean_2015_rf - ssm_mean_2015_cci)
-plt.savefig('Global_SSM_difference_RF-CCI_2015.jpg')
+plt.savefig('Global_SSM_difference_RF-CCI_2015.pdf', dpi=600)
 plt.close()
 
 

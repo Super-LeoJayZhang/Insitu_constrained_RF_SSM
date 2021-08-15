@@ -2,7 +2,7 @@
 Thesis_MSc_Lijie Calculate_API
 date: 19-Jun-2020
 author: leojay
-Contact: l.zhang-8@student.utwente.nl
+Contact: leojayak@gmail.com
 -------------------------------------
 Description: This script is used to calculate the Antecedent Precipitation Index from the daily precipitation data.
 """

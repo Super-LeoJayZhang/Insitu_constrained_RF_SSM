@@ -2,7 +2,7 @@
 Thesis_MSc_Lijie Synchronize_the_GEE_downloaded_pts
 date: 17-Jun-2020
 author: leojay
-Contact: l.zhang-8@student.utwente.nl
+Contact: leojayak@gmail.com
 -------------------------------------
 Description: This script is used to synchronize the time-series from GEE.
     1. Extract the needed information.

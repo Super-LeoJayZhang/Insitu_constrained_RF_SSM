@@ -2,7 +2,7 @@
 thesis_proj2 Functions_general_li
 date: 24-Feb-2020
 author: leojay
-Contact: l.zhang-8@student.utwente.nl
+Contact: leojayak@gmail.com
 """
 
 from datetime import datetime, timedelta

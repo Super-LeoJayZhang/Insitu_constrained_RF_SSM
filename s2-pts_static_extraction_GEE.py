@@ -2,7 +2,7 @@
 Thesis_MSc_Lijie pts_static_extraction_v01
 date: 19-Jun-2020
 author: leojay
-Contact: l.zhang-8@student.utwente.nl
+Contact: leojayak@gmail.com
 -------------------------------------
 Description: Download the static features
 """
