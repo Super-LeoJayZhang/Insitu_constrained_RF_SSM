@@ -1,7 +1,7 @@
 """
  Gridded_data_preprocessing_global_stripes
 date: 05-Aug-2020
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: 

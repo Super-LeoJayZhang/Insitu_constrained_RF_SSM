@@ -1,6 +1,6 @@
 """
 date: 03-Jul-2021
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: This script used to calculate the 18 yrs average of SSM from both ESA-CCI and RF-predicted.

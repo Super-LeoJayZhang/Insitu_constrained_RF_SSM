@@ -1,7 +1,7 @@
 """
  RF_run_vol1
 date: 10-May-2020  // update 02-07-2020. Add the ESA-CCI data.
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: Run the RF model with the predictors from GEE.

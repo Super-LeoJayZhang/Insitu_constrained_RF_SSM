@@ -1,7 +1,7 @@
 """
  Synchronize_the_GEE_downloaded_pts
 date: 17-Jun-2020
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: This script is used to synchronize the time-series from GEE.

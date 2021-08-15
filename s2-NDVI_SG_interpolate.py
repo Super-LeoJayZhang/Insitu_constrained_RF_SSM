@@ -1,7 +1,7 @@
 """
  NDVI_SG_interpolate
 date: 19-Jun-2020
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: 

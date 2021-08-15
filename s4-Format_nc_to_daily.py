@@ -1,7 +1,7 @@
 """
  s4-Format_nc_to_daily
 date: 23-May-2021
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: 

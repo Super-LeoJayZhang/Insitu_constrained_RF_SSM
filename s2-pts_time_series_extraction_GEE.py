@@ -1,7 +1,7 @@
 """
  pts_time_series_extraction_v01
 date: 27-Apr-2020; // updated: 12-Jun-2020
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: This script is used to download the time-series of land surface features from GEE at the point scale.

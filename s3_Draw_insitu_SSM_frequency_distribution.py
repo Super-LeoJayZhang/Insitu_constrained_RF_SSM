@@ -1,7 +1,7 @@
 """
  s3_Draw_insitu_SSM_frequency_distribution.py
 date: 05-Jul-2021
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: 

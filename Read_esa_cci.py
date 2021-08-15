@@ -1,6 +1,6 @@
 """
 date: 25-May-2020 / updated: 26-June-2021.
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: This script used to read ESA-CCI COMBINED\v04.4 soil moisture data into daily SSM in the format of tiff

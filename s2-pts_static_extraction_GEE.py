@@ -1,7 +1,7 @@
 """
  pts_static_extraction_v01
 date: 19-Jun-2020
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: Download the static features

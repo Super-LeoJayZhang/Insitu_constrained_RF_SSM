@@ -1,7 +1,7 @@
 """
  Calculate_API
 date: 19-Jun-2020
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: This script is used to calculate the Antecedent Precipitation Index from the daily precipitation data.

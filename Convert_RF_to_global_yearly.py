@@ -1,7 +1,7 @@
 """
  s4-Draw_global_regional_SSM
 date: 26-Jun-2021
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: 

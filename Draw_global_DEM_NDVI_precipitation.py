@@ -1,7 +1,7 @@
 """
  Draw_global_DEM_NDVI_precipitation
 date: 09-Jul-2021
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: 

@@ -1,7 +1,7 @@
 """
 thesis_proj2 Functions_general_li
 date: 24-Feb-2020
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 """
 

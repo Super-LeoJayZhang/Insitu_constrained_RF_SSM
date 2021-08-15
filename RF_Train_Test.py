@@ -1,7 +1,7 @@
 """
  RF_Train_Test.py
 date: 25-Jun-2021
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: 

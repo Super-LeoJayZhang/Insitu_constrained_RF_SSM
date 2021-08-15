@@ -1,7 +1,7 @@
 """
  s4-draw-global_ssm
 date: 26-Jun-2021
-author: leojay
+ author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
 Description: 
