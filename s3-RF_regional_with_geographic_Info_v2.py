@@ -1,6 +1,6 @@
 """
  RF_run_vol1
-date: 10-May-2020  // update 02-07-2020. Add the ESA-CCI data.
+date: 10-May-2020  // update 02-07-2020. Add the ESA-CCI data. // UPDATE 15-Aug-2021
  author: L.Zhang
 Contact: leojayak@gmail.com
 -------------------------------------
