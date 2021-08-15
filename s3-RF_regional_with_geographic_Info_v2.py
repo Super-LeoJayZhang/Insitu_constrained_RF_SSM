@@ -84,6 +84,7 @@ def draw_feature_importance(feature_list, importances, save_path, show_figure=0)
              xerr=std[indices], align='center')
     plt.yticks(range(train_features.shape[1]), feature_list_new, fontsize=20)
     plt.ylim(-1, train_features.shape[1])
+    plt.xlim(0, 0.35)
     # Add the labels
     # plt.ylabel('Name of Features', fontsize=10)
     plt.xlabel('Relative Importance', fontsize=12)
@@ -124,6 +125,7 @@ model_trees = 100  # The number of trees that used in the RF model.
 
 # Keys to switch on the process
 key_read_frFiles = False
+key_train_rf = False
 
 # time (start running)
 time_0 = datetime.now()
@@ -201,20 +203,34 @@ for network_name in networks_list:
     print('train: %d' % len(train_features))
     print('test: %d' % len(test_features))
     rf_model.n_estimator = model_trees
-    rf, predictions, importances, std, indices, rmse, r2, r = rf_model.train_model()
-    print('rmse: %.3f' % rmse)
-    print('r: %.3f' % r)
 
-    # Save the model on the local drive for the usage of next time.
-    joblib.dump(rf, os.path.join(folder_output, 'train_model_1.m'))
+    if key_train_rf:
+        rf, predictions, importances, std, indices, rmse, r2, r = rf_model.train_model()
+        print('rmse: %.3f' % rmse)
+        print('r: %.3f' % r)
+        ''' Testing result'''
+        img_testing = os.path.join(folder_output, 'Testing_Result.jpg')
+        draw_testing_result(test_labels, predictions, img_testing)
+
+        # Save the model on the local drive for the usage of next time.
+        joblib.dump(rf, os.path.join(folder_output, 'train_model_1.m'))
+        # Save the feature importance in a *.csv file.
+        df_importances = pd.DataFrame(columns=['feature_list', 'importances', 'indices', 'std'])
+        df_importances['feature_list'] = feature_list
+        df_importances['importances'] = importances
+        df_importances['indices'] = indices
+        df_importances['std'] = std
+        df_importances.to_csv(os.path.join(folder_output, 'Feature_importance.csv'))
+    else:
+        df_importances = pd.read_csv(os.path.join(folder_output, 'Feature_importance.csv'), index_col=0)
+        feature_list = df_importances['feature_list']
+        importances = df_importances['importances']
+        indices = df_importances['indices']
+        std = df_importances['std']
 
     ''' Feature Importance Figure.'''
     img_importance = os.path.join(folder_output, 'Feature_Importance.jpg')
     draw_feature_importance(feature_list, importances, img_importance)
-
-    ''' Testing result'''
-    img_testing = os.path.join(folder_output, 'Testing_Result.jpg')
-    draw_testing_result(test_labels, predictions, img_testing)
 
     # Read the file of land cover.
     df_lc = pd.read_csv(file_lc, index_col=0)
@@ -348,7 +364,8 @@ def Draw_time_series_station(file_in, figure_out):
     plt.text(x=0.1, y=0.54, s=str('RMSE_RF:  %.2f [$\mathregular{cm^3}$/$\mathregular{cm^3}$].  '
                                   'ubRMSE:  %.2f  [$\mathregular{cm^3}$/$\mathregular{cm^3}$].' % (rmse_RF, ubrmse_RF)))
     plt.text(x=0.1, y=0.51, s=str('RMSE_CCI  %.2f [$\mathregular{cm^3}$/$\mathregular{cm^3}$].  '
-                                  'ubRMSE:  %.2f  [$\mathregular{cm^3}$/$\mathregular{cm^3}$].' % (rmse_cci, ubrmse_cci)))
+                                  'ubRMSE:  %.2f  [$\mathregular{cm^3}$/$\mathregular{cm^3}$].' % (
+                                      rmse_cci, ubrmse_cci)))
     plt.text(x=0.1, y=0.48, s=str('r_RF:  %.2f ' % p_r_RF))
     plt.text(x=0.1, y=0.45, s=str('r_CCI:  %.2f ' % p_r_cci))
 
