@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie pts_static_extraction_v01
+ pts_static_extraction_v01
 date: 19-Jun-2020
 author: leojay
 Contact: leojayak@gmail.com

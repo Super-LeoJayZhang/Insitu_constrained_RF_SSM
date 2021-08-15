@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie RF_run_ALL_vol1
+ RF_run_ALL_vol1
 date: 19-May-2020. All the networks (stations).
 author: leojay
 Contact: leojayak@gmail.com

@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie Draw_feature_importance_testing.py
+ Draw_feature_importance_testing.py
 date: 25-Jun-2021
 author: leojay
 Contact: leojayak@gmail.com

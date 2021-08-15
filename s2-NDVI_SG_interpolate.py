@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie NDVI_SG_interpolate
+ NDVI_SG_interpolate
 date: 19-Jun-2020
 author: leojay
 Contact: leojayak@gmail.com

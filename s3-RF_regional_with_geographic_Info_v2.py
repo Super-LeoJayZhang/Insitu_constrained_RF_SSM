@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie RF_run_vol1
+ RF_run_vol1
 date: 10-May-2020  // update 02-07-2020. Add the ESA-CCI data.
 author: leojay
 Contact: leojayak@gmail.com

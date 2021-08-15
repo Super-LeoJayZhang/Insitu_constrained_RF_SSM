@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie pts_time_series_extraction_v01
+ pts_time_series_extraction_v01
 date: 27-Apr-2020; // updated: 12-Jun-2020
 author: leojay
 Contact: leojayak@gmail.com

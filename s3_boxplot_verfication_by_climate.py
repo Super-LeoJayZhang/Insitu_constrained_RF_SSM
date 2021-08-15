@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie s3_boxplot_verfication_by_climate
+ s3_boxplot_verfication_by_climate
 date: 05-Jul-2021
 author: leojay
 Contact: leojayak@gmail.com

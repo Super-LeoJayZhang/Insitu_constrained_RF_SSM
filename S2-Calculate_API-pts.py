@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie Calculate_API
+ Calculate_API
 date: 19-Jun-2020
 author: leojay
 Contact: leojayak@gmail.com

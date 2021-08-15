@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie Draw_USA_SSM
+ Draw_USA_SSM
 date: 05-Jul-2021
 author: leojay
 Contact: leojayak@gmail.com

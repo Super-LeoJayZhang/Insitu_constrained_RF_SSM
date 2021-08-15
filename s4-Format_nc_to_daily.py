@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie s4-Format_nc_to_daily
+ s4-Format_nc_to_daily
 date: 23-May-2021
 author: leojay
 Contact: leojayak@gmail.com

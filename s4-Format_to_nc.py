@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie s4-Format_to_nc
+ s4-Format_to_nc
 date: 19-May-2021
 author: L.Zhang
 Contact: leojayak@gmail.com

@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie RF_Train_Test.py
+ RF_Train_Test.py
 date: 25-Jun-2021
 author: leojay
 Contact: leojayak@gmail.com

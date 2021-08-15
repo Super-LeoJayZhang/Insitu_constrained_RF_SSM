@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie Gridded_data_preprocessing_global_stripes
+ Gridded_data_preprocessing_global_stripes
 date: 05-Aug-2020
 author: leojay
 Contact: leojayak@gmail.com

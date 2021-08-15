@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie Draw_global_DEM_NDVI_precipitation
+ Draw_global_DEM_NDVI_precipitation
 date: 09-Jul-2021
 author: leojay
 Contact: leojayak@gmail.com

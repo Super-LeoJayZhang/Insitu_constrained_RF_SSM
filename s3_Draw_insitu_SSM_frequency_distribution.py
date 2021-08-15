@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie s3_Draw_insitu_SSM_frequency_distribution.py
+ s3_Draw_insitu_SSM_frequency_distribution.py
 date: 05-Jul-2021
 author: leojay
 Contact: leojayak@gmail.com

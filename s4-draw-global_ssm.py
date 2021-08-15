@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie s4-draw-global_ssm
+ s4-draw-global_ssm
 date: 26-Jun-2021
 author: leojay
 Contact: leojayak@gmail.com

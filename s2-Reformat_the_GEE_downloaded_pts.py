@@ -1,5 +1,5 @@
 """
-Thesis_MSc_Lijie Synchronize_the_GEE_downloaded_pts
+ Synchronize_the_GEE_downloaded_pts
 date: 17-Jun-2020
 author: leojay
 Contact: leojayak@gmail.com
