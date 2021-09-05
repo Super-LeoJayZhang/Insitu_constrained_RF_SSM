@@ -26,8 +26,6 @@ def cal_ubrmse(a, b):
     return ubrmse, a_mean, b_mean
 
 
-
-
 # Work directory.
 work_dir = r'/media/zhang/Samsung_T5/Thesis_Data/L2_RF/RF_regional_with_geographic_info_v2/all'
 os.chdir(work_dir)
@@ -39,6 +37,7 @@ if not os.path.exists(folder_out):
 
 file_lc = r'station_climate_lc_new.csv'
 df_lc = pd.read_csv(file_lc, index_col=0)
+
 
 def obtain_result(file_name, file_lc=file_lc):
     df_lc = pd.read_csv(file_lc, index_col=0)
@@ -63,19 +62,22 @@ def obtain_result(file_name, file_lc=file_lc):
 
     df.columns = ['In_situ', 'RF_predicted', 'ESA_CCI']
 
-    return df, network_name, station_name,[rmse_RF, ubrmse_RF, p_r_RF, rmse_cci, ubrmse_cci, p_r_cci, number_n], \
+    return df, network_name, station_name, [rmse_RF, ubrmse_RF, p_r_RF, rmse_cci, ubrmse_cci, p_r_cci, number_n], \
            climate, lc_2010
+
+
 # test
 file_name = 'USCRN_Versailles-3-NNW.csv'
 file_name_list = ['USCRN_Versailles-3-NNW.csv', 'SCAN_GoodwinCreekPasture.csv',
-                  'SOILSCAPE_node403.csv', 'SNOTEL_DRYLAKE.csv'] # choose four stations.
+                  'SOILSCAPE_node403.csv', 'SNOTEL_DRYLAKE.csv']  # choose four stations.
+
 
 def draw_TimeSeries(idx_i, idx_j, file_name, title, file_lc=file_lc, legend_on=0):
     ax = axs[idx_i, idx_j]
     df, network_name, station_name, metrics, climate, landcover = obtain_result(file_name)
     if legend_on:
-        im = ax.plot(df.index, df['In_situ'], 'k-',  label='In_situ')
-        im = ax.plot(df.index, df['RF_predicted'], 'g-.', label='RF_predicted')
+        im = ax.plot(df.index, df['In_situ'], 'k-', label='In_situ')
+        im = ax.plot(df.index, df['RF_predicted'], 'g-.', label='RF_SSM')
         im = ax.plot(df.index, df['ESA_CCI'], 'b:', label='ESA_CCI')
 
     else:
@@ -83,7 +85,7 @@ def draw_TimeSeries(idx_i, idx_j, file_name, title, file_lc=file_lc, legend_on=0
         im = ax.plot(df.index, df['RF_predicted'], 'g-.')
         im = ax.plot(df.index, df['ESA_CCI'], 'b:')
     # Set the figure parameters.
-    ax.set_xticks(ax.get_xticks()[::int(metrics[-1]/5)])
+    ax.set_xticks(ax.get_xticks()[::int(metrics[-1] / 5)])
     ax.set_yticks([0.1, 0.2, 0.3, 0.4, 0.5])
     ax.set_ylabel(r'Surface soil moisture ($\mathregular{cm^3/cm^3}$)', fontsize=12)
     ax.set_xlabel(f'({title})', fontsize=14)
@@ -92,14 +94,15 @@ def draw_TimeSeries(idx_i, idx_j, file_name, title, file_lc=file_lc, legend_on=0
     # ax.text(x=0.05, y=0.51, s=str('Land cover: %s' % landcover), fontsize=12)
 
     if legend_on:
-        ax.legend()
+        ax.legend(fontsize=12)
+
 
 fig, axs = plt.subplots(2, 2, figsize=(12, 8), constrained_layout=True)
 draw_TimeSeries(0, 0, file_name_list[0], 'a')
 draw_TimeSeries(0, 1, file_name_list[1], 'b')
 draw_TimeSeries(1, 0, file_name_list[2], 'c')
 draw_TimeSeries(1, 1, file_name_list[3], 'd', legend_on=1)
-
+plt.savefig('Evaluation_TimeSeries.jpg', dpi=300)
 #
 # df0, [network_name0, station_name0], metrics0, climate0, landcover0 = obtain_result(file_name)
 #
