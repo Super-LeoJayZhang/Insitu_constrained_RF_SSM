@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
-
+from mpl_toolkits.axes_grid1 import AxesGrid
 
 # -----------------------------------------
 # Self defined function to draw the figure.
@@ -53,31 +53,31 @@ df_metrics_2 = pd.merge(df_metrics, df_lon_lat, on='station', how='inner')
 
 data_crs = ccrs.PlateCarree()
 
-plt.subplots(3, 2, figsize=(13.5, 11))
+plt.subplots(3, 2, figsize=(13.5, 9))
 # RMSE: RF SSM
 ax0 = plt.subplot(3, 2, 1, projection=data_crs)
 draw_metrics_pts_regional(ax0, df_metrics_2, vmin=0, vmax=0.2, metrics_name='RMSE_RF',
-                          title='(a) RF SSM', colorbar_name='RMSE')
+                          title='(a) RMSE of RF SSM', colorbar_name='RMSE')
 
 ax1 = plt.subplot(3, 2, 2, projection=data_crs)
 draw_metrics_pts_regional(ax1, df_metrics_2, vmin=0, vmax=0.2, metrics_name='RMSE_cci',
-                          title='(b) ESA CCI', colorbar_name='RMSE')
+                          title='(b) RMSE of ESA CCI SSM', colorbar_name='RMSE')
 
 ax2 = plt.subplot(3, 2, 3, projection=data_crs)
 draw_metrics_pts_regional(ax2, df_metrics_2, vmin=0, vmax=0.1, metrics_name='ubRMSE_RF',
-                          title='(c) RF SSM', colorbar_name='ubRMSE')
+                          title='(c) ubRMSE of RF SSM', colorbar_name='ubRMSE')
 
 ax3 = plt.subplot(3, 2, 4, projection=data_crs)
 draw_metrics_pts_regional(ax3, df_metrics_2, vmin=0, vmax=0.1, metrics_name='ubRMSE_RF',
-                          title='(d) ESA CCI', colorbar_name='ubRMSE')
+                          title='(d) ubRMSE of ESA CCI SSM', colorbar_name='ubRMSE')
 
 ax4 = plt.subplot(3, 2, 5, projection=data_crs)
 draw_metrics_pts_regional(ax4, df_metrics_2, vmin=-0.2, vmax=1, metrics_name='r_RF',
-                          title='(f) RF SSM', colorbar_name='Pearson Correlation')
+                          title='(e) Perason Correlation of RF SSM', colorbar_name='Pearson Correlation')
 
 ax5 = plt.subplot(3, 2, 6, projection=data_crs)
 draw_metrics_pts_regional(ax5, df_metrics_2, vmin=-0.2, vmax=1, metrics_name='r_cci',
-                          title='(f) ESA CCI', colorbar_name='Pearson Correlation')
+                          title='(f) Perason correlation of ESA CCI SSM', colorbar_name='Pearson Correlation')
 
 #
 # def draw_metrics_pts_regional(ax, df, vmin, vmax, metrics_name):
@@ -107,3 +107,4 @@ draw_metrics_pts_regional(ax5, df_metrics_2, vmin=-0.2, vmax=1, metrics_name='r_
 # output_folder
 folder_output = r'a:\Thesis_Data'
 plt.savefig(os.path.join(folder_output, 'map_pts_rmse_corr_rmse.pdf'), dpi=300)
+plt.savefig(os.path.join(folder_output, 'map_pts_rmse_corr_rmse.png'), dpi=300)
