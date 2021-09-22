@@ -16,7 +16,7 @@ df_all = pd.read_csv(r'a:\Thesis_Data\In_situ_all_climate.csv')
 climate_list = df_all['climate'].drop_duplicates().sort_values()
 
 #  Draw the figure of in-situ distribution.
-figs, axs = plt.subplots(2, 2, figsize=(12, 12), constrained_layout=True)
+figs, axs = plt.subplots(2, 2, figsize=(10, 8), constrained_layout=True)
 for climate_name in climate_list:
     if 'A' in climate_name or 'E' in climate_name:
         print(climate_name)
@@ -31,14 +31,17 @@ for climate_name in climate_list:
     if 'D'in climate_name:
         ax3 = sns.distplot(df_all[df_all['climate'] == climate_name]['soil moisture'],
                            kde_kws={"label": climate_name}, ax=axs[1, 1])
-ax0.set(xlabel=r"Soil moisture ($cm^3/cm^3$)", ylabel="Percent (%)", title="a. Tropical and polar climate group")
+ax0.set(xlabel=r'SSM $(m^3m^{-3})$', ylabel="Percent (%)", title="(a) Tropical and polar climate group")
 ax0.set_xlim(0, 0.6)
 
-ax1.set(xlabel=r"Soil moisture ($cm^3/cm^3$)", ylabel="Percent (%)", title="b. Dry climate group")
+ax1.set(xlabel=r'SSM $(m^3m^{-3})$', ylabel="Percent (%)", title="(b) Dry climate group")
 ax1.set_xlim(0, 0.6)
 
-ax2.set(xlabel=r"Soil moisture ($cm^3/cm^3$)", ylabel="Percent (%)", title="c. Temperate climate group")
+ax2.set(xlabel=r'SSM $(m^3m^{-3})$', ylabel="Percent (%)", title="(c) Temperate climate group")
 ax2.set_xlim(0, 0.6)
 
-ax3.set(xlabel=r"Soil moisture ($cm^3/cm^3$)", ylabel="Percent (%)", title="d. Continental climate group")
+ax3.set(xlabel=r'SSM $(m^3m^{-3})$', ylabel="Percent (%)", title="(d) Continental climate group")
 ax3.set_xlim(0, 0.6)
+
+plt.savefig(r'a:\Thesis_Data\Frequency_distribution.png', dpi=300)
+plt.savefig(r'a:\Thesis_Data\Frequency_distribution.pdf', dpi=300)
