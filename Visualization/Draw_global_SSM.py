@@ -76,7 +76,7 @@ ax0 = plt.subplot(3, 1, 1, projection=data_crs)
 draw_global_ssm_map(ax0, ssm_mean_2015_rf, title='(a) RF SSM')
 
 ax1 = plt.subplot(3, 1, 2, projection=data_crs)
-draw_global_ssm_map(ax1, ssm_mean_2015_cci, title='(b) ESA CCI ssm')
+draw_global_ssm_map(ax1, ssm_mean_2015_cci, title='(b) ESA CCI SSM')
 
 ax2 = plt.subplot(3, 1, 3, projection=data_crs)
 draw_global_ssm_map(ax2, ssm_mean_2015_rf - ssm_mean_2015_cci, vmin=-0.2, vmax=0.1, cmap='RdBu',
