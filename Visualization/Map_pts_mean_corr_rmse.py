@@ -8,13 +8,11 @@ Description:
 """
 # libraries
 import os
-from datetime import datetime
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
-from mpl_toolkits.axes_grid1 import AxesGrid
+import matplotlib.pyplot as plt
+import pandas as pd
+
 
 # -----------------------------------------
 # Self defined function to draw the figure.
@@ -73,35 +71,12 @@ draw_metrics_pts_regional(ax3, df_metrics_2, vmin=0, vmax=0.1, metrics_name='ubR
 
 ax4 = plt.subplot(3, 2, 5, projection=data_crs)
 draw_metrics_pts_regional(ax4, df_metrics_2, vmin=-0.2, vmax=1, metrics_name='r_RF',
-                          title='(e) Perason Correlation of RF SSM', colorbar_name='Pearson Correlation')
+                          title='(e) Pearson Correlation of RF SSM', colorbar_name='Pearson Correlation')
 
 ax5 = plt.subplot(3, 2, 6, projection=data_crs)
 draw_metrics_pts_regional(ax5, df_metrics_2, vmin=-0.2, vmax=1, metrics_name='r_cci',
-                          title='(f) Perason correlation of ESA CCI SSM', colorbar_name='Pearson Correlation')
+                          title='(f) Pearson correlation of ESA CCI SSM', colorbar_name='Pearson Correlation')
 
-#
-# def draw_metrics_pts_regional(ax, df, vmin, vmax, metrics_name):
-#     data_crs = ccrs.PlateCarree()
-#     fig, ax = plt.subplots(1, 1)
-#     ax = plt.axes(projection=ccrs.PlateCarree())
-#     ax.coastlines(linewidth=0.5)
-#     ax.add_feature(cfeature.BORDERS, linewidth=0.5, edgecolor='gray')
-#     ax.set_extent([-125, -66, 24, 46])
-#
-#     # Grid
-#     ax.set_xticks([-120, -100, -80])
-#     ax.set_xticklabels(['$\mathregular{120^o}$ W', '$\mathregular{100^o}$ W', '$\mathregular{80^o}$ W'])
-#     ax.set_yticks([50, 40, 30])
-#     ax.set_yticklabels(['$\mathregular{50^o}$ N', '$\mathregular{40o}$ N', '$\mathregular{30^o}$ N'])
-#
-#     plt.scatter(x=df['lon'], y=df['lat'], c=df[metrics_name], vmin=vmin, vmax=vmax,
-#                 edgecolors='black', cmap='gnuplot2',
-#                 data=df[metrics_name])
-#     cb = plt.colorbar(ax=ax, aspect=50, shrink=0.6, fraction=0.046, pad=0.04)
-#     if 'RMSE' in metrics_name:
-#         cb.set_label(metrics_name + ' [$\mathregular{cm^3}$/$\mathregular{cm^3}$]')
-#     else:
-#         cb.set_label(metrics_name)
 #
 
 # output_folder
