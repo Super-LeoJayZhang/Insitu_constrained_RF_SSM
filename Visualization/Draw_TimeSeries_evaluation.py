@@ -103,5 +103,7 @@ draw_TimeSeries(0, 0, file_name_list[0], 'a')
 draw_TimeSeries(0, 1, file_name_list[1], 'b')
 draw_TimeSeries(1, 0, file_name_list[2], 'c')
 draw_TimeSeries(1, 1, file_name_list[3], 'd', legend_on=1)
+plt.savefig('Evaluation_TimeSeries.eps', dpi=300)
+plt.savefig('Evaluation_TimeSeries.pdf', dpi=300)
+plt.savefig('Evaluation_TimeSeries.png', dpi=300)
 plt.savefig('Evaluation_TimeSeries.jpg', dpi=300)
-
