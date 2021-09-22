@@ -50,7 +50,7 @@ def draw_US_ssm(ax, data, title='title', cmap='YlGnBu', colorbar_name='SSM', vmi
     plt.imshow(data, origin='upper', cmap=cmap, vmin=vmin, vmax=vmax, extent=[-125, -66, 24, 50])
     # Add the ColorBar
     cb = plt.colorbar(ax=ax, aspect=50, shrink=0.8, fraction=0.046, extend='both')
-    cb.set_label(fr'{colorbar_name}' + ' $(m^3m{^-3}$)', fontsize=12)
+    cb.set_label(fr'{colorbar_name}' + ' $(m^3m^{-3})$', fontsize=12)
     plt.title(f'{title}', fontsize=12)
 
 
@@ -62,7 +62,7 @@ ax1 = plt.subplot(3, 1, 2, projection=data_crs)
 draw_US_ssm(ax1, ssm_cci_mean, title='(b) ESA CCI SSM')
 ax2 = plt.subplot(3, 1, 3, projection=data_crs)
 draw_US_ssm(ax2, ssm_rf_mean - ssm_cci_mean,
-            title='(c) Difference between RF and ESA CCI SS,', cmap='RdBu', vmin=-0.2, vmax=0.1)
+            title='(c) Difference between RF and ESA CCI SSM,', cmap='RdBu', vmin=-0.2, vmax=0.1)
 
 plt.savefig(r'a:\Thesis_Data\USA_SSM.png', dpi=300)
 plt.savefig(r'a:\Thesis_Data\USA_SSM.pdf', dpi=300)
